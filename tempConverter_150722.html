@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <h2>Temperature Converter</h2>
+    <h3>Type a value in the Fahrenheit field to convert the value to Celcius:</h3>
+  </head>
+  <body>
+    <form style="width: 400px;">
+      <fieldset>
+      <p>
+      <label>Fahrenheit</label>
+      <input type="number" id="inputF" placeholder="Please change Fahrenheit: " style="height: 25px;text-align:center;font-size: 16px;font-weight: bold;width: 250px;" 
+              oninput="temConverter(this.value)"
+              onchange="temConverter(this.value)">
+      </p>
+      <p>Celsius: <span id="outputC" style="color: blue;font-size:16px;font-weight: bold;"></span></p>
+      
+    </fieldset>
+    </form>
+
+    <script>
+      function temConverter(temF) {
+
+        temF = parseFloat(document.getElementById("inputF").value);
+        document.getElementById("outputC").innerHTML = ((temF-32)/1.8).toFixed(2);
+
+      }
+    </script>
+
+  </body>
+</html>
